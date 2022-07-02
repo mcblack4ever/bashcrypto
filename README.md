@@ -41,3 +41,22 @@ openssl req -x509 -newkey rsa:4096 -keyout privatekey.pem -out publickey.pem
 
 ## To-Do
 - ?
+
+### Example
+
+apple@apple-virtual-machine:~/Desktop/maplestory/aa/bashcrypto$ ./bashcrypto -e -p publickey.pem -i /home/apple/Desktop/maplestory/aa/terraform-provider-azurerm/ -o holy
+
+[+] directory found!
+
+
+[+] ENCRYPT
+[+] INPUT:  /home/apple/Desktop/maplestory/aa/terraform-provider-azurerm/
+[+] OUTPUT: holy
+
+
+[!] Your file will be encypted now!
+
+      
+[+] Done!
+apple@apple-virtual-machine:~/Desktop/maplestory/aa/bashcrypto$ 
+
