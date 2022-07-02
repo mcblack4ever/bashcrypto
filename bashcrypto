@@ -70,8 +70,8 @@ function encrypt() {
 		# If input is a directory and 'tarmode' is set to 0, encrypt every file in it
         elif [[ -d $INPUT_FILE && -z $TARMODE ]]; then
             DIR=$INPUT_FILE/*
-            for file in $DIR; do
-				openssl smime -encrypt -binary -aes-256-cbc -in $file -out $file.$OUTPUT_FILE -outform DER $KEYFILE | spinner
+                     for file in $(find $DIR -type f); do
+				openssl smime -encrypt -binary -aes-256-cbc -in $file -out $file -outform DER $KEYFILE | spinner
 				 
 				if [[ $SHASUM == 1 ]]; then
 					echo $($SHA $OUTPUT_FILE) > shasum.$OUTPUT_FILE.txt
